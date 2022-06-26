@@ -17,7 +17,7 @@
 # under the License.
 #
 
-name: Redpanda
+name: ack-all-group-linger-1ms
 driverClass: io.openmessaging.benchmark.driver.redpanda.RedpandaBenchmarkDriver
 # Kafka client-specific configuration
 replicationFactor: 3
@@ -31,6 +31,7 @@ producerConfig: |
   acks=all
   linger.ms=1
   batch.size=131072
+  max.in.flight.requests.per.connection=5
 consumerConfig: |
   group.id=benchGroup
   auto.offset.reset=earliest
