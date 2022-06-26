@@ -147,7 +147,7 @@
     - name: install redpanda
       package: 
         name: 
-          - redpanda
+          - redpanda=21.11.17-1-da2e11c3
         state: present
         update_cache: yes
     - name: set data dir file perms
