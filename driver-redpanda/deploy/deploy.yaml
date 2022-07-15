@@ -180,6 +180,7 @@
         address: {{ hostvars[inventory_hostname].private_ip }},
         port: 33145
       }' --format yaml
+      rpk config set redpanda.enable_idempotence false
       rpk mode production
 
       {% if hostvars[groups['redpanda'][0]].id == hostvars[inventory_hostname].id %}
