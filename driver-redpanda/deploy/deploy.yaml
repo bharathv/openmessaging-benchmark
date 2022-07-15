@@ -141,13 +141,13 @@
     - name: add the repanda apt repo
       when: ansible_os_family == 'Debian'
       shell: |
-        curl -1sLf 'https://packages.vectorized.io/nzc4ZYQK3WRGd9sy/redpanda/cfg/setup/bash.deb.sh' | sudo -E bash
+        curl -1sLf 'https://packages.vectorized.io/E4xN1tVe3Xy60GTx/redpanda-unstable/cfg/setup/bash.deb.sh' | sudo -E bash
       args:
         warn: no
     - name: install redpanda
       package: 
         name: 
-          - redpanda=22.1.4-1
+          - redpanda=22.1.5~rc1-1
         state: present
         update_cache: yes
     - name: set data dir file perms
