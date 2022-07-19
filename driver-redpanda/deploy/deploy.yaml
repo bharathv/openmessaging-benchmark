@@ -135,13 +135,13 @@
     - name: add the redpanda yum repo
       when: ansible_os_family == 'RedHat'
       shell: |
-        curl -1sLf 'https://packages.vectorized.io/nzc4ZYQK3WRGd9sy/redpanda/cfg/setup/bash.rpm.sh' | sudo -E bash
+        curl -1sLf 'https://packages.vectorized.io/0Flf0P3PmG08gQq0/redpanda-nightly/cfg/setup/bash.rpm.sh' | sudo -E bash
       args: 
         warn: no 
     - name: add the repanda apt repo
       when: ansible_os_family == 'Debian'
       shell: |
-        curl -1sLf 'https://packages.vectorized.io/nzc4ZYQK3WRGd9sy/redpanda/cfg/setup/bash.deb.sh' | sudo -E bash
+        curl -1sLf 'https://packages.vectorized.io/0Flf0P3PmG08gQq0/redpanda-nightly/cfg/setup/bash.deb.sh' | sudo -E bash
       args:
         warn: no
     - name: install redpanda
