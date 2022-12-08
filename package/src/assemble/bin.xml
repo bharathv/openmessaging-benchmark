@@ -37,6 +37,11 @@
 			<directory>${basedir}/../bin</directory>
 			<fileMode>755</fileMode>
 		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../conf</directory>
+			<fileMode>755</fileMode>
+		</fileSet>
+
 
 		<fileSet>
 			<directory>${basedir}/..</directory>

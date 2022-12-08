@@ -13,6 +13,8 @@
 # limitations under the License.
 #
 
+ROOT_DIR=`realpath $(dirname $0)/..`
+
 if [ -d "./lib" ]; then
         CLASSPATH=$CLASSPATH:lib/*
 else
@@ -27,4 +29,6 @@ fi
 JVM_MEM="${HEAP_OPTS} -XX:+UseG1GC"
 JVM_GC_LOG=" -XX:+PrintGCDetails -XX:+PrintGCApplicationStoppedTime  -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=64m  -Xloggc:/dev/shm/benchmark-client-gc_%p.log"
 
-java -server -cp $CLASSPATH $JVM_MEM io.openmessaging.benchmark.Benchmark $*
+KAFKA_LOG4J_OPTS="-Dlog4j2.configurationFile=file://${ROOT_DIR}/conf/log4j.properties"
+
+java -server -cp $CLASSPATH $JVM_MEM $KAFKA_LOG4J_OPTS io.openmessaging.benchmark.Benchmark $*
